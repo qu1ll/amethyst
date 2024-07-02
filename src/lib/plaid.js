@@ -13,6 +13,15 @@ const plaidClient = new PlaidApi(
   })
 );
 
+async function transactionsGet(accessToken, options = {}) {
+  const response = await plaidClient.transactionsGet({
+    access_token: accessToken,
+    ...options, // Add optional arguments here (e.g., start_date, end_date)
+  });
+  return response.data;
+}
+
+
 const sessionOptions = {
   cookieName: 'myapp_cookiename',
   password: 'complex_password_at_least_32_characters_long',
@@ -22,4 +31,4 @@ const sessionOptions = {
   },
 };
 
-export { plaidClient, sessionOptions };
+export { plaidClient, transactionsGet, sessionOptions };
