@@ -1,13 +1,29 @@
 import { withIronSessionSsr } from 'iron-session/next';
-import { plaidClient, sessionOptions } from '../lib/plaid.mjs';
+import { plaidClient, sessionOptions } from '../lib/plaid';
 
 export default function Dashboard({ balance }) {
-  return Object.entries(balance).map((entry, i) => (
-    <pre key={i}>
-      <code>{JSON.stringify(entry[1], null, 2)}</code>
-    </pre>
-  ));
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Balance (USD)</th>
+          <th>Subtype</th>
+        </tr>
+      </thead>
+      <tbody>
+        {balance.accounts.map((account, i) => (
+          <tr key={i}>
+            <td>{account.name}</td>
+            <td>{account.balances.available}</td>
+            <td>{account.subtype}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
+
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
