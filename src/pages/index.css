@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define custom color variables */
+:root {
+  --background: 0 0% 100%; /* Adjust these values for your desired background color */
+  --foreground: 240 10% 3.9%; /* Adjust these values for your desired foreground color */
+
+  --card: 0 0% 100%; /* Colors for cards */
+  --card-foreground: 240 10% 3.9%;
+
+  --popover: 0 0% 100%; /* Colors for popovers */
+  --popover-foreground: 240 10% 3.9%;
+
+  --primary: 240 5.9% 10%; /* Primary color */
+  --primary-foreground: 0 0% 98%; /* Foreground color for primary elements */
+
+  --secondary: 240 4.8% 95.9%; /* Secondary color */
+  --secondary-foreground: 240 5.9% 10%; /* Foreground color for secondary elements */
+
+  --muted: 240 4.8% 95.9%; /* Muted color */
+  --muted-foreground: 240 3.8% 46.1%; /* Foreground color for muted elements */
+
+  --accent: 240 4.8% 95.9%; /* Accent color */
+  --accent-foreground: 240 5.9% 10%; /* Foreground color for accent elements */
+
+  --destructive: 0 84.2% 60.2%; /* Destructive color */
+  --destructive-foreground: 0 0% 98%; /* Foreground color for destructive elements */
+
+  --border: 240 5.9% 90%; /* Border color */
+  --input: 240 5.9% 90%; /* Input background color */
+  --ring: 240 10% 3.9%; /* Ring color (for focus etc.) */
+
+  --radius: 0.5rem; /* Default border radius */
+}
+
+/* Dark mode styles (optional) */
+.dark {
+  --background: 240 10% 3.9%; /* Adjust these values for your desired dark background color */
+  --foreground: 0 0% 98%; /* Adjust these values for your desired dark foreground color */
+
+  /* Update card, popover, and other colors for dark mode */
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+}
+
+/* Global styles using Tailwind classes */
+@layer base {
+  * {
+    @apply border-border; /* Apply a border to all elements (optional) */
+  }
+  body {
+    @apply bg-background text-foreground; /* Set background and text color using custom variables */
+  }
+}

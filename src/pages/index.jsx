@@ -1,3 +1,4 @@
+import React from 'react'
 import Router from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 import { usePlaidLink } from 'react-plaid-link';
@@ -33,8 +34,13 @@ export default function PlaidLink() {
   });
 
   return (
-    <button onClick={() => open()} disabled={!ready}>
-      <strong>Link account</strong>
-    </button>
+    <div>
+      <button onClick={() => open()} disabled={!ready}>
+        <strong>Link account</strong>
+      </button>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
+    </div>
   );
 }
